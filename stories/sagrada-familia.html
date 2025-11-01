@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the story of Sagrada Familia, Antoni Gaudí's masterpiece and Barcelona's most iconic landmark.">
+    <title>Sagrada Familia - The Curious Architect</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        .story-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            overflow: hidden;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .story-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.2);
+        }
+        
+        .story-hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            padding: var(--spacing-lg);
+        }
+        
+        .story-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: white;
+        }
+        
+        .story-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-md);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .story-info-box {
+            background-color: var(--white);
+            border-left: 4px solid var(--primary-color);
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            border-radius: 5px;
+        }
+        
+        .story-info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .info-value {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-top: 0.25rem;
+        }
+        
+        .story-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .story-content h2 {
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+        
+        .story-gallery {
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .story-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .story-gallery img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+            border-radius: 10px;
+            transition: var(--transition-slow);
+        }
+        
+        .story-gallery img:hover {
+            filter: grayscale(0%) contrast(1);
+            transform: scale(1.02);
+        }
+        
+        .story-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .related-stories {
+            background-color: var(--background-cream);
+            padding: var(--spacing-xl) 0;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .related-stories h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-lg) 0;
+            padding: var(--spacing-md) 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .share-button {
+            padding: 0.5rem 1rem;
+            background-color: var(--white);
+            border: 2px solid var(--text-gray);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition-base);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .share-button:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">THE CURIOUS ARCHITECT</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../gallery.html">Gallery</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Story Hero -->
+    <section class="story-hero">
+        <img src="../images/buildings/sagrada-familia-main.jpg" alt="Sagrada Familia" class="story-hero-image">
+        <div class="watermark">THE CURIOUS ARCHITECT</div>
+        <div class="story-hero-overlay">
+            <h1>Sagrada Familia</h1>
+            <div class="story-meta">
+                <span>📍 Barcelona, Spain</span>
+                <span>👤 Antoni Gaudí</span>
+                <span>📅 1882 - Present</span>
+                <span>⏱️ 8 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Content -->
+    <article class="story-content">
+        <!-- Building Information -->
+        <div class="story-info-box">
+            <h3>Building Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Barcelona, Spain</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Architect</span>
+                    <span class="info-value">Antoni Gaudí</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Construction Started</span>
+                    <span class="info-value">1882</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Architectural Style</span>
+                    <span class="info-value">Modernisme, Art Nouveau</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status</span>
+                    <span class="info-value">Under Construction</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Expected Completion</span>
+                    <span class="info-value">2026</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Story Text -->
+        <p class="lead">The Sagrada Familia stands as Barcelona's most iconic landmark and Antoni Gaudí's magnum opus. Construction began in 1882, and remarkably, it continues to this day—making it one of the world's longest-running architectural projects.</p>
+
+        <p>Gaudí devoted the last 15 years of his life exclusively to this project, living on-site and pouring his visionary genius into every detail. His dedication transformed what could have been a conventional neo-Gothic church into something entirely unprecedented in architectural history.</p>
+
+        <h2>A Revolutionary Design</h2>
+
+        <p>The basilica's design is revolutionary, blending Gothic traditions with organic, nature-inspired forms. Three grand facades represent the birth, passion, and glory of Christ. The Nativity Facade, the only one completed during Gaudí's lifetime, showcases his characteristic style with its flowing forms and intricate sculptural details.</p>
+
+        <p>Inside, the forest-like columns branch toward the ceiling like trees, creating a canopy of stone that filters colored light through stained glass windows. This wasn't mere aesthetics—Gaudí studied natural structures to create columns that could support immense weight while appearing delicate and organic.</p>
+
+        <h2>Engineering Marvel</h2>
+
+        <p>When completed (projected for 2026, the centenary of Gaudí's death), the Sagrada Familia will feature 18 towers. The central tower, representing Jesus Christ, will stand 172.5 meters tall—deliberately one meter shorter than Montjuïc hill, as Gaudí believed human creation should never surpass God's.</p>
+
+        <p>The basilica represents more than architectural innovation; it's a spiritual journey rendered in stone, a testament to human perseverance, and a bridge between the 19th and 21st centuries. Every visitor who walks through its doors experiences Gaudí's vision of bringing heaven down to earth through architecture.</p>
+
+        <!-- Tags -->
+        <div class="story-tags">
+            <span class="tag">UNESCO World Heritage</span>
+            <span class="tag">Basilica</span>
+            <span class="tag">Under Construction</span>
+            <span class="tag">Catalan Modernism</span>
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="share-buttons">
+            <button class="share-button" onclick="shareStory('twitter')">
+                <span>🐦</span> Share
+            </button>
+            <button class="share-button" onclick="shareStory('facebook')">
+                <span>📘</span> Share
+            </button>
+            <button class="share-button" onclick="copyLink()">
+                <span>🔗</span> Copy Link
+            </button>
+        </div>
+    </article>
+
+    <!-- Related Stories -->
+    <section class="related-stories">
+        <div class="container">
+            <h2>You Might Also Like</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="window.location.href='colosseum.html'">
+                    <img src="../images/buildings/colosseum-main.jpg" alt="Colosseum">
+                    <div class="category-overlay">
+                        <h3>The Colosseum</h3>
+                        <p>Ancient Rome's architectural marvel</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="window.location.href='taj-mahal.html'">
+                    <img src="../images/buildings/taj-mahal-main.jpg" alt="Taj Mahal">
+                    <div class="category-overlay">
+                        <h3>Taj Mahal</h3>
+                        <p>A monument to eternal love</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="window.location.href='../gallery.html'">
+                    <img src="../images/thumbs/modern-thumb.jpg" alt="More stories">
+                    <div class="category-overlay">
+                        <h3>Explore More</h3>
+                        <p>View all architectural wonders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Curious Architect</h3>
+                    <p>Exploring the world's most fascinating structures, one building at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../gallery.html">Gallery</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/the_curious_architect" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Curious Architect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        function shareStory(platform) {
+            const url = window.location.href;
+            const title = 'Sagrada Familia - The Curious Architect';
+            
+            if (platform === 'twitter') {
+                window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank');
+            } else if (platform === 'facebook') {
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+            }
+        }
+        
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
