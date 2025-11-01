@@ -1,2 +1,1 @@
-# thecuriousarchitect.io
-Github-Pages site
+# thecuriousarchitect.com
